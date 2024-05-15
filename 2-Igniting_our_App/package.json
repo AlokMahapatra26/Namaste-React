@@ -4,7 +4,9 @@
   "description": "random description",
  
   "scripts": {
-    "test": "jest"
+    "test": "jest" ,
+    "start" :  "parcel index.html",
+    "build" : "parcel build inde.html"
   },
   "keywords": [
     "react"
