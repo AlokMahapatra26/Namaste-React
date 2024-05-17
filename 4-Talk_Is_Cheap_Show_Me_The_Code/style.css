@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.logo  img {
+ width: 100px;
+}
+
+.header .nav-items li{
+    display: inline;
+    padding: 0px 20px ;
+    
+}
+
+/* Restaurantr card */
+
+.res-card{
+    width: max-content;
+    /* border: 1px solid red; */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin: 10px;
+    cursor: pointer;
+}
+
+.res-card-img > img{
+    width: 200px;
+    border-radius: 10px;
+}
+
+.body .restaurant-cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

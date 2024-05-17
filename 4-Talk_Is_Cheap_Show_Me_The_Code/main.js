@@ -1,21 +1,25 @@
-# Parcel
- - Dev Build
- - Local Server
- - HMR = Hot Module replacement
- - File Watching Algorithm - written in c++
- - Faster Build due to caching 
- - Image Optimization
- - Minification of file also
- - Bundling 
- - Compressss
- - Consistent hashing
- - Code Splitting
- - Differential Bundling - to support older browser
- - HTTPs
- - Tree Shaking - remove unused code
 
 
- const dataObj = [
+import React from 'react';
+import ReactDOM from 'react-dom/client'
+
+/**
+ * 
+ * Header
+ *  -Logo
+ *  - nav items
+ * Body
+ *  - Search bar
+ *  - Restaurant container
+ *      - card
+ *  -Footer
+ *      
+ * 
+ */
+
+
+//Data
+const dataObj = [
     {
       "name": "Spicy Curry",
       "cuisine": "Indian",
@@ -132,3 +136,77 @@
     }
   ]
   
+
+const Header = () => {
+    return (
+        <div className='header'>
+            <div className='logo'>
+               <img src='https://images-platform.99static.com//NtR_BeUemCzxeM0ufpwE1MOnyRs=/42x0:1856x1814/fit-in/500x500/99designs-contests-attachments/56/56993/attachment_56993352'/>
+            </div>
+            <div className='nav-items'>
+                <ul>
+                    <li>Search</li>
+                    <li>Offers</li>
+                    <li>Cart</li>
+                    <li>Sign in</li>
+                </ul>
+            </div>
+        </div>
+    )
+}
+
+
+const RestaurantCard = (props) => {
+
+    const {name , cuisine , rating , delivery_time} = props.data;
+
+    return (
+        <div className='res-card'>
+            <div className='res-card-img'>
+                <img src="https://media.istockphoto.com/id/1459715799/photo/pizza-with-ham-and-cheese.jpg?s=612x612&w=0&k=20&c=gpRMVfqy44ag4TkroT8WEerRotlfKheZQu6kQkdhnxQ="/>
+            </div>
+            <div>
+                <h3>{name}</h3>
+                <p>{cuisine}</p>
+                <p>{`rating : ${rating}`}</p>
+                <p>{`delivery time : ${delivery_time}`}</p>
+            </div>
+        </div>
+    )
+}
+
+
+const Body = () => {
+    return (
+        <div className='body'>
+            <div className='restaurant-cards'>
+                {
+                    dataObj.map(res => (
+                        <RestaurantCard data={res}/>
+                    ))
+                }
+                
+               
+            </div>
+        </div>
+    )
+}
+
+const App = () => {
+    return (
+        <div className='app'>
+            <Header/>
+            <Body/>
+        </div>
+    )
+}
+
+
+
+
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App/>);
+
+
